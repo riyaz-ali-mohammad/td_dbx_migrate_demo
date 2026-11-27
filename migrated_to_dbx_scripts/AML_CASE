@@ -1,0 +1,76 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 0,
+   "metadata": {
+    "application/vnd.databricks.v1+cell": {
+     "cellMetadata": {},
+     "inputWidgets": {},
+     "nuid": "8a2754a4-a3ff-4466-b586-d01f02b292fa",
+     "showTitle": false,
+     "tableResultSettingsMap": {},
+     "title": ""
+    }
+   },
+   "outputs": [],
+   "source": [
+    "----------------------------------------\n",
+    "-- Consumption view on AML investigation cases.\n",
+    "-- Row filter : case segment must be granted to the session user.\n",
+    "----------------------------------------\n",
+    "\n",
+    "-- Converted Teradata REPLACE VIEW to Databricks CREATE OR REPLACE VIEW.\n",
+    "-- Dropped LOCKING TABLE ... FOR ACCESS; Delta reads a committed snapshot.\n",
+    "-- Converted the Teradata session USER keyword to CURRENT_USER().\n",
+    "-- assumption: The current Unity Catalog contains schemas VX_AML, DB_AML, and DB_REFERENCE.\n",
+    "CREATE OR REPLACE VIEW VX_AML.AML_CASE\n",
+    "AS\n",
+    "SELECT cse.CASE_ID,\n",
+    "       cse.PARTY_ID,\n",
+    "       cse.CASE_OPEN_DT,\n",
+    "       cse.CASE_STATUS_CD,\n",
+    "       cse.CASE_PRIORITY_NR,\n",
+    "       cse.QUEUE_CD,\n",
+    "       cse.SLA_DUE_DT,\n",
+    "       CASE WHEN cse.CASE_STATUS_CD <> 'CLOSD'\n",
+    "             AND cse.SLA_DUE_DT < CURRENT_DATE\n",
+    "            THEN 'Y' ELSE 'N'\n",
+    "       END                                  AS OVER_SLA_IND,\n",
+    "       cse.ALERT_CNT,\n",
+    "       cse.TOTAL_ALERT_SCORE,\n",
+    "       cse.TOTAL_HIT_GBP_AMT,\n",
+    "       cse.RULE_LIST,\n",
+    "       cse.SAR_CANDIDATE_IND,\n",
+    "       cse.RISK_BAND_CD,\n",
+    "       cse.SEGMENT_CD,\n",
+    "       cse.FIRST_ALERT_DT,\n",
+    "       cse.LAST_ALERT_DT,\n",
+    "       cse.CASE_CLOSE_DT,\n",
+    "       cse.CLOSE_REASON_CD,\n",
+    "       cse.CO_UPD_TMS\n",
+    "FROM DB_AML.AML_CASE AS cse\n",
+    "INNER JOIN DB_REFERENCE.VIEW_ACCESS_CTRL AS acc\n",
+    "        ON acc.SEGMENT_CD = cse.SEGMENT_CD\n",
+    "       AND acc.USER_NM = CURRENT_USER();\n"
+   ]
+  }
+ ],
+ "metadata": {
+  "application/vnd.databricks.v1+notebook": {
+   "computePreferences": null,
+   "dashboards": [],
+   "environmentMetadata": null,
+   "inputWidgetPreferences": null,
+   "language": "sql",
+   "notebookMetadata": {},
+   "notebookName": "AML_CASE",
+   "widgets": {}
+  },
+  "language_info": {
+   "name": "sql"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 0
+}

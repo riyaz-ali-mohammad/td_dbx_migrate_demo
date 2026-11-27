@@ -1,0 +1,86 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 0,
+   "metadata": {
+    "application/vnd.databricks.v1+cell": {
+     "cellMetadata": {},
+     "inputWidgets": {},
+     "nuid": "4d9beecf-2308-480b-a228-3a297ac252d3",
+     "showTitle": false,
+     "tableResultSettingsMap": {},
+     "title": ""
+    }
+   },
+   "outputs": [],
+   "source": [
+    "----------------------------------------\n",
+    "-- Consumption view on the customer risk score.\n",
+    "-- Row filter : customer segment must be granted to the session user.\n",
+    "-- Column mask: customer name and date of birth unless PII_ACCESS_IND = 'Y'\n",
+    "----------------------------------------\n",
+    "\n",
+    "-- Converted REPLACE VIEW to CREATE OR REPLACE VIEW and removed Teradata ACCESS lock hints; Delta reads committed snapshots.\n",
+    "-- assumption: VX_AML, DB_AML, DB_ODS, and DB_REFERENCE are migrated schemas in the current Unity Catalog catalog.\n",
+    "-- TODO: manual review required — confirm the source character-cast mode for the bounded VARCHAR expression; Databricks does not enforce VARCHAR length in expression casts.\n",
+    "CREATE OR REPLACE VIEW VX_AML.PARTY_RISK_SCORE\n",
+    "AS\n",
+    "SELECT prs.PARTY_ID,\n",
+    "       pty.PARTY_TYP_CD,\n",
+    "       CASE WHEN acc.PII_ACCESS_IND = 'Y' THEN pty.FULL_NM\n",
+    "            ELSE CAST('*** MASKED ***' AS VARCHAR(100))\n",
+    "       END                                  AS FULL_NM,\n",
+    "       CASE WHEN acc.PII_ACCESS_IND = 'Y' THEN pty.BIRTH_DT\n",
+    "            ELSE CAST(NULL AS DATE)\n",
+    "       END                                  AS BIRTH_DT,\n",
+    "       pty.SEGMENT_CD,\n",
+    "       pty.RESIDENCE_CTRY_CD,\n",
+    "       pty.NATIONALITY_CD,\n",
+    "       pty.PEP_IND,\n",
+    "       pty.KYC_STATUS_CD,\n",
+    "       pty.KYC_REVIEW_DUE_DT,\n",
+    "       prs.SCORE_DT,\n",
+    "       prs.CTRY_SCORE,\n",
+    "       prs.PEP_SCORE,\n",
+    "       prs.OCCP_SCORE,\n",
+    "       prs.PRDT_SCORE,\n",
+    "       prs.CHNL_SCORE,\n",
+    "       prs.ALERT_SCORE,\n",
+    "       prs.SANC_SCORE,\n",
+    "       prs.KYC_SCORE,\n",
+    "       prs.ADV_MEDIA_SCORE,\n",
+    "       prs.TOTAL_SCORE,\n",
+    "       prs.RISK_BAND_CD,\n",
+    "       prs.PREV_RISK_BAND_CD,\n",
+    "       prs.BAND_CHG_IND,\n",
+    "       prs.EDD_REQUIRED_IND,\n",
+    "       prs.NEXT_REVIEW_DT,\n",
+    "       prs.CO_UPD_TMS\n",
+    "FROM DB_AML.PARTY_RISK_SCORE AS prs\n",
+    "INNER JOIN DB_ODS.PARTY AS pty\n",
+    "   ON pty.PARTY_ID = prs.PARTY_ID\n",
+    "INNER JOIN DB_REFERENCE.VIEW_ACCESS_CTRL AS acc\n",
+    "   ON acc.SEGMENT_CD = pty.SEGMENT_CD\n",
+    "  AND acc.USER_NM = current_user();\n"
+   ]
+  }
+ ],
+ "metadata": {
+  "application/vnd.databricks.v1+notebook": {
+   "computePreferences": null,
+   "dashboards": [],
+   "environmentMetadata": null,
+   "inputWidgetPreferences": null,
+   "language": "sql",
+   "notebookMetadata": {},
+   "notebookName": "PARTY_RISK_SCORE",
+   "widgets": {}
+  },
+  "language_info": {
+   "name": "sql"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 0
+}

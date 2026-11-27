@@ -1,0 +1,74 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 0,
+   "metadata": {
+    "application/vnd.databricks.v1+cell": {
+     "cellMetadata": {},
+     "inputWidgets": {},
+     "nuid": "ffd850d6-a166-4d17-a852-98f42be3c1b3",
+     "showTitle": false,
+     "tableResultSettingsMap": {},
+     "title": ""
+    }
+   },
+   "outputs": [],
+   "source": [
+    "----------------------------------------\n",
+    "-- Consumption view on SAR candidates (tipping-off sensitive, POCA 2002 s.333A).\n",
+    "-- Only users with SAR_ACCESS_IND = 'Y' for the case segment see any rows.\n",
+    "----------------------------------------\n",
+    "\n",
+    "-- Converted Teradata REPLACE VIEW to CREATE OR REPLACE VIEW and removed LOCKING FOR ACCESS hints because Delta reads committed snapshots.\n",
+    "-- Converted the Teradata USER identity expression to CURRENT_USER().\n",
+    "-- assumption: No target Unity Catalog mapping was provided, so source two-part names are left unqualified for resolution in the current catalog and schema.\n",
+    "CREATE OR REPLACE VIEW SAR_CANDIDATE\n",
+    "AS\n",
+    "SELECT sar.CASE_ID,\n",
+    "       sar.PARTY_ID,\n",
+    "       cse.SEGMENT_CD,\n",
+    "       cse.CASE_STATUS_CD,\n",
+    "       cse.CASE_PRIORITY_NR,\n",
+    "       cse.QUEUE_CD,\n",
+    "       sar.IDENT_DT,\n",
+    "       sar.SAR_REASON_CD,\n",
+    "       sar.TOTAL_GBP_AMT,\n",
+    "       sar.SANC_HIT_IND,\n",
+    "       sar.DAML_IND,\n",
+    "       sar.NARRATIVE_SUMMARY,\n",
+    "       sar.SAR_STATUS_CD,\n",
+    "       sar.CO_UPD_TMS\n",
+    "FROM\n",
+    "       SAR_CANDIDATE            sar\n",
+    "\n",
+    "       INNER JOIN\n",
+    "       AML_CASE                 cse\n",
+    "          ON  cse.CASE_ID = sar.CASE_ID\n",
+    "\n",
+    "       INNER JOIN\n",
+    "       VIEW_ACCESS_CTRL         acc\n",
+    "          ON  acc.SEGMENT_CD     = cse.SEGMENT_CD\n",
+    "          AND acc.USER_NM        = CURRENT_USER()\n",
+    "          AND acc.SAR_ACCESS_IND = 'Y';\n"
+   ]
+  }
+ ],
+ "metadata": {
+  "application/vnd.databricks.v1+notebook": {
+   "computePreferences": null,
+   "dashboards": [],
+   "environmentMetadata": null,
+   "inputWidgetPreferences": null,
+   "language": "sql",
+   "notebookMetadata": {},
+   "notebookName": "SAR_CANDIDATE",
+   "widgets": {}
+  },
+  "language_info": {
+   "name": "sql"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 0
+}

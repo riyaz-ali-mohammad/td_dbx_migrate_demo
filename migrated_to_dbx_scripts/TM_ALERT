@@ -1,0 +1,73 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 0,
+   "metadata": {
+    "application/vnd.databricks.v1+cell": {
+     "cellMetadata": {},
+     "inputWidgets": {},
+     "nuid": "2a4f6ab3-eca9-4bdb-87eb-fe9924f255fb",
+     "showTitle": false,
+     "tableResultSettingsMap": {},
+     "title": ""
+    }
+   },
+   "outputs": [],
+   "source": [
+    "----------------------------------------\n",
+    "-- Consumption view on transaction monitoring alerts.\n",
+    "-- Row filter : segment of the alerted party must be granted to the session user.\n",
+    "----------------------------------------\n",
+    "\n",
+    "-- Converted Teradata REPLACE VIEW to Databricks CREATE OR REPLACE VIEW.\n",
+    "-- Dropped Teradata FOR ACCESS locking hints; Delta reads committed snapshots.\n",
+    "-- Converted the Teradata session USER expression to CURRENT_USER().\n",
+    "-- assumption: Source Teradata database names map to same-named schemas in the current Unity Catalog.\n",
+    "CREATE OR REPLACE VIEW VX_AML.TM_ALERT AS\n",
+    "SELECT al.ALERT_ID,\n",
+    "       al.RULE_CD,\n",
+    "       al.PARTY_ID,\n",
+    "       al.ACCT_ID,\n",
+    "       COALESCE(psn.SEGMENT_CD, 'RET') AS SEGMENT_CD,\n",
+    "       al.BUSINESS_DT,\n",
+    "       al.ALERT_TMS,\n",
+    "       al.ALERT_SCORE,\n",
+    "       al.HIT_GBP_AMT,\n",
+    "       al.HIT_CNT,\n",
+    "       al.LOOKBACK_START_DT,\n",
+    "       al.LOOKBACK_END_DT,\n",
+    "       al.TRIGGER_TXN_REF,\n",
+    "       al.TRIGGER_SUPPLIER_CD,\n",
+    "       al.ALERT_STATUS_CD,\n",
+    "       al.SUPPRESS_REASON_CD,\n",
+    "       al.CASE_ID,\n",
+    "       al.HIT_DETAIL,\n",
+    "       al.CO_UPD_TMS\n",
+    "FROM DB_AML.TM_ALERT AS al\n",
+    "LEFT OUTER JOIN DB_ODS.PARTY_SNAPSHOT AS psn\n",
+    "  ON psn.PARTY_ID = al.PARTY_ID\n",
+    "INNER JOIN DB_REFERENCE.VIEW_ACCESS_CTRL AS acc\n",
+    "  ON acc.SEGMENT_CD = COALESCE(psn.SEGMENT_CD, 'RET')\n",
+    " AND acc.USER_NM = CURRENT_USER();\n"
+   ]
+  }
+ ],
+ "metadata": {
+  "application/vnd.databricks.v1+notebook": {
+   "computePreferences": null,
+   "dashboards": [],
+   "environmentMetadata": null,
+   "inputWidgetPreferences": null,
+   "language": "sql",
+   "notebookMetadata": {},
+   "notebookName": "TM_ALERT",
+   "widgets": {}
+  },
+  "language_info": {
+   "name": "sql"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 0
+}
