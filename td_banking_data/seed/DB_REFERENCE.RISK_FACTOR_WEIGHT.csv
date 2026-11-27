@@ -1,0 +1,39 @@
+FACTOR_CD,FACTOR_VALUE_CD,SCORE_PTS,FACTOR_DESC
+RESCTRY,L,0,Country of residence risk
+RESCTRY,M,10,Country of residence risk
+RESCTRY,H,30,Country of residence risk
+RESCTRY,X,60,Country of residence risk
+RESCTRY,UNKNOWN,15,Country of residence risk
+NATCTRY,L,0,Nationality risk
+NATCTRY,M,5,Nationality risk
+NATCTRY,H,20,Nationality risk
+NATCTRY,X,40,Nationality risk
+NATCTRY,UNKNOWN,10,Nationality risk
+PEP,DO,30,Politically exposed person
+PEP,FO,40,Politically exposed person
+PEP,IO,30,Politically exposed person
+PEP,RC,20,Politically exposed person
+PEP,NONE,0,Politically exposed person
+OCCP,L,0,Occupation / industry risk
+OCCP,M,10,Occupation / industry risk
+OCCP,H,25,Occupation / industry risk
+OCCP,UNKNOWN,10,Occupation / industry risk
+PRDT,L,0,Highest product risk held
+PRDT,M,5,Highest product risk held
+PRDT,H,15,Highest product risk held
+PRDT,UNKNOWN,5,Highest product risk held
+CHNL,F2F,0,Onboarding channel
+CHNL,NFTF,5,Onboarding channel
+ALERTS,0,0,TM alerts in last 90 days
+ALERTS,1-2,10,TM alerts in last 90 days
+ALERTS,3-5,20,TM alerts in last 90 days
+ALERTS,6+,35,TM alerts in last 90 days
+SANC,OPEN,60,Open sanctions screening hit
+SANC,NONE,0,Open sanctions screening hit
+KYC,OVERDUE,15,KYC status
+KYC,VE,0,KYC status
+KYC,PE,10,KYC status
+KYC,EX,15,KYC status
+KYC,RF,40,KYC status
+ADVMEDIA,Y,25,Adverse media
+ADVMEDIA,N,0,Adverse media

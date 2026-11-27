@@ -1,0 +1,19 @@
+METRIC,VALUE
+run_date (BUSINESS_DT),2026-11-25
+history window,2026-06-28 .. 2026-11-24
+parties (KYCSYS PY),1020
+accounts (KYCSYS AC),1318
+party-account roles (PA),1489
+aliases (AL),50
+refsys records (excl. HD/TR),1310
+kycsys records (excl. HD/TR),3877
+sanctions designations,121
+sanctions name rows,178
+dailytxn detail records,1499
+dailytxn record length,1243
+history txns (DB_ODS.AML_TXN_DAILY seed),183670
+counterparties (DB_ODS.CPTY seed),1383
+account-days (DB_AML.ACCT_DAILY_SUMM seed),99959
+prior alerts / cases seeded,141 / 126
+expected alerts on run date,25
+expected screening hits,8

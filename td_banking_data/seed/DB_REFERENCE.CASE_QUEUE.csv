@@ -1,0 +1,10 @@
+QUEUE_CD,QUEUE_NM,SEGMENT_CD,MIN_PRIORITY_NR,MAX_PRIORITY_NR,SLA_BUS_DAYS
+RETP1,Retail - priority investigations,RET,1,2,5
+RETSTD,Retail - standard investigations,RET,3,5,20
+BUSP1,Business - priority investigations,BUS,1,2,5
+BUSSTD,Business - standard investigations,BUS,3,5,20
+CIBP1,Corporate - priority investigations,CIB,1,2,5
+CIBSTD,Corporate - standard investigations,CIB,3,5,20
+WLTP1,Wealth - priority investigations,WLT,1,2,5
+WLTSTD,Wealth - standard investigations,WLT,3,5,20
+AMLGEN,AML general queue,ALL,1,5,20

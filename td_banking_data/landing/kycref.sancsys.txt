@@ -1,0 +1,179 @@
+Group ID|Name 6|Name 1|Name 2|Name 3|Name 4|Name 5|Title|Name Non-Latin Script|DOB|Town of Birth|Country of Birth|Nationality|Passport Number|National Identification Number|Position|Address 1|Country|Other Information|Group Type|Alias Type|Alias Quality|Regime|Listed On|UK Sanctions List Date Designated|Last Updated|UK Sanctions List Ref
+14001|KORVEX MARITIME HOLDINGS LLC|||||||Корвекс Маритайм Холдингс|||||||||Russia|Ship management company. Registered address St Petersburg.|Entity|Primary name|Good|Russia|03/02/2025|03/02/2025|22/05/2025|RUS4001
+14001|KORVEKS MARITIME||||||||||||||||Russia|Ship management company. Registered address St Petersburg.|Entity|AKA|Low|Russia|03/02/2025|03/02/2025|22/05/2025|RUS4001
+14002|ZELTSKY|Arkady|Viktorovich|||||Аркадй Викторович Зелцкй|14/02/1968||Russia|Russia|7212345678||Board member, Korvex Maritime Holdings||||Individual|Primary name|Good|Russia|30/10/2022|30/10/2022|06/02/2023|RUS4002
+14002|ZELTSKI|Arkadi|||||||14/02/1968||Russia|Russia|7212345678||Board member, Korvex Maritime Holdings||||Individual|Primary name variation|Good|Russia|30/10/2022|30/10/2022|06/02/2023|RUS4002
+14003|TAVRIDA COMMERCE BANK JSC||||||||||||||||Russia|SWIFT/BIC: TVDCRUMM. Website: none.|Entity|Primary name|Good|Russia|07/06/2024|07/06/2024|25/10/2024|RUS4003
+14004|KHALILZADEH|Mahmoud Reza|||||||00/00/1961||Iran|Iran|||Procurement agent||||Individual|Primary name|Good|Iran|19/03/2025|19/03/2025|28/11/2025|IRN4004
+14004|KHALIL ZADEH|Mahmood|||||||00/00/1961||Iran|Iran|||Procurement agent||||Individual|AKA|Low|Iran|19/03/2025|19/03/2025|28/11/2025|IRN4004
+14005|RYONGAK TRADING CORPORATION||||||||||||||||North Korea|Front company|Entity|Primary name|Good|Democratic People's Republic of Korea|14/06/2026|14/06/2026|08/09/2026|DPR4005
+14006|QASSAB|Nizar|||||||26/06/1983||Syria|Syria|||Member of parliament||||Individual|Primary name|Good|Syria|04/04/2025|04/04/2025|15/04/2026|SYR4006
+14007|NAM|Han Yong|||||||27/10/1985||North Korea|North Korea|||Military officer||||Individual|Primary name|Good|Democratic People's Republic of Korea|03/04/2024|03/04/2024|19/04/2025|DPR4007
+14008|KOLCHANOV|Vadim|Lvovich|||||Вадим Лвович Колчанов|11/11/1947||Russia|Russia|||Former official||||Individual|Primary name|Good|Russia|26/04/2025|26/04/2025|08/05/2025|RUS4008
+14008|KOLCHANOV|V.|||||||11/11/1947||Russia|Russia|||Former official||||Individual|AKA|Low|Russia|26/04/2025|26/04/2025|08/05/2025|RUS4008
+14009|NAM|Kim Song|||||||24/05/1988||North Korea|North Korea|||||||Individual|Primary name|Good|Democratic People's Republic of Korea|24/04/2023|24/04/2023|13/11/2023|DPR4009
+14010|JIN|Kim Song|||||||15/06/1962||North Korea|North Korea|||||||Individual|Primary name|Good|Democratic People's Republic of Korea|22/07/2026|22/07/2026|22/11/2026|DPR4010
+14011|AL-HAMDANI|Fadi|||||||18/06/1970||Syria|Syria|||||||Individual|Primary name|Good|Syria|05/09/2025|05/09/2025|09/12/2025|SYR4011
+14011|AL-HAMDANI|F.|||||||18/06/1970||Syria|Syria|||||||Individual|AKA|Low|Syria|05/09/2025|05/09/2025|09/12/2025|SYR4011
+14012|MEZHAKOV|Yaroslav|Rostislavovich|||||Ярослав Ростиславович Межаков|02/12/1962||Belarus|Belarus|||Businessman||||Individual|Primary name|Good|Belarus|28/01/2024|28/01/2024|20/05/2024|BLR4012
+14013|AL-HAMDANI|Nizar|||||||01/12/1969||Syria|Syria|||Former official||||Individual|Primary name|Good|Syria|30/09/2025|30/09/2025|26/09/2026|SYR4013
+14014|SU|Ri Chol|||||||00/00/1971||North Korea|North Korea|||Military officer||||Individual|Primary name|Good|Democratic People's Republic of Korea|04/11/2023|04/11/2023|29/02/2024|DPR4014
+14014|SU|R.|||||||00/00/1971||North Korea|North Korea|||Military officer||||Individual|AKA|Low|Democratic People's Republic of Korea|04/11/2023|04/11/2023|29/02/2024|DPR4014
+14015|TALYZIN|Lavrenty|Rostislavovich|||||Лаврентй Ростиславович Талйзин|00/00/1974||Belarus|Belarus|||Military officer||||Individual|Primary name|Good|Belarus|08/02/2023|08/02/2023|14/09/2023|BLR4015
+14015|TALYZIN|L.|||||||00/00/1974||Belarus|Belarus|||Military officer||||Individual|AKA|Low|Belarus|08/02/2023|08/02/2023|14/09/2023|BLR4015
+14016|NAM|Choe Sok|||||||28/03/1976||North Korea|North Korea|||Former official||||Individual|Primary name|Good|Democratic People's Republic of Korea|16/07/2023|16/07/2023|28/05/2024|DPR4016
+14017|AL-HAMDANI|Tariq|||||||25/10/1963||Syria|Syria|||Businessman||||Individual|Primary name|Good|Syria|09/06/2026|09/06/2026|24/07/2026|SYR4017
+14017|AL-HAMDANI|T.|||||||25/10/1963||Syria|Syria|||Businessman||||Individual|AKA|Low|Syria|09/06/2026|09/06/2026|24/07/2026|SYR4017
+14017|AL-HAMDANII|Tariq|||||||25/10/1963||Syria|Syria|||Businessman||||Individual|Primary name variation|Good|Syria|09/06/2026|09/06/2026|24/07/2026|SYR4017
+14018|GROMTSEV|Feliks|Rostislavovich|||||Феликс Ростиславович Громцев|28/10/1965||Russia|Russia|||Businessman||||Individual|Primary name|Good|Russia|16/07/2024|16/07/2024|16/12/2024|RUS4018
+14018|GROMTSEV|F.|||||||28/10/1965||Russia|Russia|||Businessman||||Individual|AKA|Low|Russia|16/07/2024|16/07/2024|16/12/2024|RUS4018
+14019|TALYZIN|Matvei|Yefimovich|||||Матвеи Йефимович Талйзин|07/04/1946||Belarus|Belarus|||Member of parliament||||Individual|Primary name|Good|Belarus|01/04/2026|01/04/2026|13/08/2026|BLR4019
+14020|SU|Kim Song|||||||16/09/1982||North Korea|North Korea|||Former official||||Individual|Primary name|Good|Democratic People's Republic of Korea|27/10/2024|27/10/2024|07/11/2024|DPR4020
+14021|JIN|Choe Sok|||||||15/01/1970||North Korea|North Korea|||||||Individual|Primary name|Good|Democratic People's Republic of Korea|06/02/2024|06/02/2024|26/07/2024|DPR4021
+14022|AL-HAMDANI|Wael|||||||00/00/1979||Syria|Syria|||Businessman||||Individual|Primary name|Good|Syria|03/11/2025|03/11/2025|06/09/2026|SYR4022
+14023|MIRHASHEMI|Behrouz|||||||05/04/1976||Iran|Iran|||Member of parliament||||Individual|Primary name|Good|Iran|25/04/2025|25/04/2025|28/10/2025|IRN4023
+14024|ZVONAREV|Rodion|Gennadyevich|||||Родион Геннадйевич Звонарев|00/00/1960||Belarus|Belarus|||Member of parliament||||Individual|Primary name|Good|Belarus|06/06/2024|06/06/2024|17/02/2025|BLR4024
+14025|SHALHOUB|Bashir|||||||00/00/1976||Syria|Syria|||||||Individual|Primary name|Good|Syria|14/05/2026|14/05/2026|22/11/2026|SYR4025
+14026|KOLCHANOV|Zakhar|Gennadyevich|||||Захар Геннадйевич Колчанов|16/01/1974||Russia|Russia|||||||Individual|Primary name|Good|Russia|03/08/2025|03/08/2025|27/08/2026|RUS4026
+14027|SHARAPOVSKY|Stanislav|Matveyevich|||||Станислав Матвейевич Шараповскй|01/04/1961||Belarus|Belarus|||||||Individual|Primary name|Good|Belarus|07/10/2024|07/10/2024|31/05/2025|BLR4027
+14028|SARRAFIAN|Shahram|||||||10/05/1984||Iran|Iran|||Former official||||Individual|Primary name|Good|Iran|19/01/2024|19/01/2024|22/04/2024|IRN4028
+14029|BURMISTROV|Gennady|Viktorovich|||||Геннадй Викторович Бурмистров|27/09/1960||Belarus|Belarus|||Member of parliament||||Individual|Primary name|Good|Belarus|20/04/2025|20/04/2025|23/08/2025|BLR4029
+14029|BURMISTROV|G.|||||||27/09/1960||Belarus|Belarus|||Member of parliament||||Individual|AKA|Low|Belarus|20/04/2025|20/04/2025|23/08/2025|BLR4029
+14030|GROMTSEV|Gleb|Matveyevich|||||Глеб Матвейевич Громцев|00/00/1961||Russia|Russia|||Military officer||||Individual|Primary name|Good|Russia|03/07/2026|03/07/2026|22/11/2026|RUS4030
+14030|GROMTSEV|G.|||||||00/00/1961||Russia|Russia|||Military officer||||Individual|AKA|Low|Russia|03/07/2026|03/07/2026|22/11/2026|RUS4030
+14031|TALYZIN|Timofei|Lvovich|||||Тимофеи Лвович Талйзин|00/00/1947||Belarus|Belarus|||Member of parliament||||Individual|Primary name|Good|Belarus|24/03/2023|24/03/2023|30/09/2023|BLR4031
+14031|TALYZIN|T.|||||||00/00/1947||Belarus|Belarus|||Member of parliament||||Individual|AKA|Low|Belarus|24/03/2023|24/03/2023|30/09/2023|BLR4031
+14032|MARDINI|Bashir|||||||25/01/1952||Syria|Syria|||Military officer||||Individual|Primary name|Good|Syria|05/11/2025|05/11/2025|18/02/2026|SYR4032
+14032|MARDINII|Bashir|||||||25/01/1952||Syria|Syria|||Military officer||||Individual|Primary name variation|Good|Syria|05/11/2025|05/11/2025|18/02/2026|SYR4032
+14033|BURMISTROV|Rostislav|Glebovich|||||Ростислав Глебович Бурмистров|01/10/1955||Russia|Russia|||Former official||||Individual|Primary name|Good|Russia|23/09/2024|23/09/2024|15/04/2025|RUS4033
+14034|HYOK|Pak Myong|||||||19/02/1967||North Korea|North Korea|||Military officer||||Individual|Primary name|Good|Democratic People's Republic of Korea|26/05/2026|26/05/2026|26/08/2026|DPR4034
+14034|HYOKI|Pak Myong|||||||19/02/1967||North Korea|North Korea|||Military officer||||Individual|Primary name variation|Good|Democratic People's Republic of Korea|26/05/2026|26/05/2026|26/08/2026|DPR4034
+14035|DOROGUNOV|Yaroslav|Glebovich|||||Ярослав Глебович Дорогунов|00/00/1965||Russia|Russia|||Businessman||||Individual|Primary name|Good|Russia|12/08/2026|12/08/2026|22/11/2026|RUS4035
+14035|DOROGUNOV|Y.|||||||00/00/1965||Russia|Russia|||Businessman||||Individual|AKA|Low|Russia|12/08/2026|12/08/2026|22/11/2026|RUS4035
+14035|DOROGUNOVA|Yaroslav|||||||00/00/1965||Russia|Russia|||Businessman||||Individual|Primary name variation|Good|Russia|12/08/2026|12/08/2026|22/11/2026|RUS4035
+14036|TAVAKKOLIAN|Behrouz|||||||25/12/1969||Iran|Iran|||||||Individual|Primary name|Good|Iran|11/01/2026|11/01/2026|08/02/2026|IRN4036
+14037|HYOK|Han Yong|||||||02/06/1964||North Korea|North Korea|||||||Individual|Primary name|Good|Democratic People's Republic of Korea|14/02/2025|14/02/2025|11/02/2026|DPR4037
+14037|HYOKI|Han Yong|||||||02/06/1964||North Korea|North Korea|||||||Individual|Primary name variation|Good|Democratic People's Republic of Korea|14/02/2025|14/02/2025|11/02/2026|DPR4037
+14038|HADDADIN|Nizar|||||||15/04/1982||Syria|Syria|||||||Individual|Primary name|Good|Syria|23/11/2025|23/11/2025|10/04/2026|SYR4038
+14038|HADDADIN|N.|||||||15/04/1982||Syria|Syria|||||||Individual|AKA|Low|Syria|23/11/2025|23/11/2025|10/04/2026|SYR4038
+14039|CHUN|Kim Song|||||||06/08/1954||North Korea|North Korea|||Former official||||Individual|Primary name|Good|Democratic People's Republic of Korea|06/11/2023|06/11/2023|15/01/2024|DPR4039
+14040|QASSAB|Tariq|||||||11/03/1968||Syria|Syria|||Military officer||||Individual|Primary name|Good|Syria|10/02/2023|10/02/2023|07/10/2023|SYR4040
+14041|HADDADIN|Fadi|||||||00/00/1982||Syria|Syria|||Businessman||||Individual|Primary name|Good|Syria|15/05/2025|15/05/2025|11/06/2025|SYR4041
+14041|HADDADINA|Fadi|||||||00/00/1982||Syria|Syria|||Businessman||||Individual|Primary name variation|Good|Syria|15/05/2025|15/05/2025|11/06/2025|SYR4041
+14042|TALYZIN|Yaroslav|Rostislavovich|||||Ярослав Ростиславович Талйзин|28/05/1961||Belarus|Belarus|||||||Individual|Primary name|Good|Belarus|12/03/2024|12/03/2024|26/09/2024|BLR4042
+14043|ZVONAREV|Svyatoslav|Glebovich|||||Святослав Глебович Звонарев|00/00/1946||Belarus|Belarus|||||||Individual|Primary name|Good|Belarus|13/07/2023|13/07/2023|20/09/2023|BLR4043
+14044|NAM|Pak Myong|||||||00/00/1946||North Korea|North Korea|||Member of parliament||||Individual|Primary name|Good|Democratic People's Republic of Korea|03/06/2024|03/06/2024|03/04/2025|DPR4044
+14044|NAMI|Pak Myong|||||||00/00/1946||North Korea|North Korea|||Member of parliament||||Individual|Primary name variation|Good|Democratic People's Republic of Korea|03/06/2024|03/06/2024|03/04/2025|DPR4044
+14045|SU|Pak Myong|||||||00/00/1968||North Korea|North Korea|||Military officer||||Individual|Primary name|Good|Democratic People's Republic of Korea|20/11/2023|20/11/2023|07/08/2024|DPR4045
+14046|VOZNYAKOV|Gennady|Borisovich|||||Геннадй Борисович Возняков|10/08/1973||Russia|Russia|||Member of parliament||||Individual|Primary name|Good|Russia|22/12/2023|22/12/2023|09/05/2024|RUS4046
+14047|GWANG|Han Yong|||||||07/09/1973||North Korea|North Korea|||Former official||||Individual|Primary name|Good|Democratic People's Republic of Korea|13/02/2025|13/02/2025|25/02/2026|DPR4047
+14047|GWANG|H.|||||||07/09/1973||North Korea|North Korea|||Former official||||Individual|AKA|Low|Democratic People's Republic of Korea|13/02/2025|13/02/2025|25/02/2026|DPR4047
+14048|GROMTSEV|Lev|Glebovich|||||Лев Глебович Громцев|23/05/1966||Belarus|Belarus|||Military officer||||Individual|Primary name|Good|Belarus|17/05/2023|17/05/2023|09/10/2023|BLR4048
+14048|GROMTSEVA|Lev|||||||23/05/1966||Belarus|Belarus|||Military officer||||Individual|Primary name variation|Good|Belarus|17/05/2023|17/05/2023|09/10/2023|BLR4048
+14049|TALYZIN|Stanislav|Rostislavovich|||||Станислав Ростиславович Талйзин|04/07/1972||Belarus|Belarus|||Former official||||Individual|Primary name|Good|Belarus|18/08/2025|18/08/2025|31/07/2026|BLR4049
+14049|TALYZINA|Stanislav|||||||04/07/1972||Belarus|Belarus|||Former official||||Individual|Primary name variation|Good|Belarus|18/08/2025|18/08/2025|31/07/2026|BLR4049
+14050|LYSENKOV|Timofei|Yefimovich|||||Тимофеи Йефимович Лйсенков|11/01/1955||Belarus|Belarus|||Member of parliament||||Individual|Primary name|Good|Belarus|27/04/2024|27/04/2024|11/12/2024|BLR4050
+14050|LYSENKOV|T.|||||||11/01/1955||Belarus|Belarus|||Member of parliament||||Individual|AKA|Low|Belarus|27/04/2024|27/04/2024|11/12/2024|BLR4050
+14051|JIN|Han Yong|||||||05/03/1976||North Korea|North Korea|||Former official||||Individual|Primary name|Good|Democratic People's Republic of Korea|05/12/2022|05/12/2022|09/08/2023|DPR4051
+14052|KOLCHANOV|Stanislav|Gennadyevich|||||Станислав Геннадйевич Колчанов|21/01/1948||Russia|Russia|||Military officer||||Individual|Primary name|Good|Russia|24/02/2025|24/02/2025|29/08/2025|RUS4052
+14052|KOLCHANOVA|Stanislav|||||||21/01/1948||Russia|Russia|||Military officer||||Individual|Primary name variation|Good|Russia|24/02/2025|24/02/2025|29/08/2025|RUS4052
+14053|KOLCHANOV|Timofei|Rostislavovich|||||Тимофеи Ростиславович Колчанов|18/11/1958||Belarus|Belarus|||Former official||||Individual|Primary name|Good|Belarus|24/08/2024|24/08/2024|26/07/2025|BLR4053
+14054|DARWISHI|Ghassan|||||||00/00/1984||Syria|Syria|||Military officer||||Individual|Primary name|Good|Syria|11/09/2026|11/09/2026|22/11/2026|SYR4054
+14054|DARWISHII|Ghassan|||||||00/00/1984||Syria|Syria|||Military officer||||Individual|Primary name variation|Good|Syria|11/09/2026|11/09/2026|22/11/2026|SYR4054
+14055|AL-HAMDANI|Ghassan|||||||11/11/1975||Syria|Syria|||||||Individual|Primary name|Good|Syria|08/12/2024|08/12/2024|04/01/2026|SYR4055
+14055|AL-HAMDANI|G.|||||||11/11/1975||Syria|Syria|||||||Individual|AKA|Low|Syria|08/12/2024|08/12/2024|04/01/2026|SYR4055
+14055|AL-HAMDANII|Ghassan|||||||11/11/1975||Syria|Syria|||||||Individual|Primary name variation|Good|Syria|08/12/2024|08/12/2024|04/01/2026|SYR4055
+14056|BAGHERZADEH|Hossein Ali|||||||02/10/1988||Iran|Iran|||Former official||||Individual|Primary name|Good|Iran|09/05/2026|09/05/2026|22/11/2026|IRN4056
+14056|BAGHERZADEHI|Hossein Ali|||||||02/10/1988||Iran|Iran|||Former official||||Individual|Primary name variation|Good|Iran|09/05/2026|09/05/2026|22/11/2026|IRN4056
+14057|HADDADIN|Bashir|||||||17/09/1967||Syria|Syria|||Businessman||||Individual|Primary name|Good|Syria|30/03/2026|30/03/2026|16/04/2026|SYR4057
+14058|CHUN|Pak Myong|||||||27/04/1956||North Korea|North Korea|||Businessman||||Individual|Primary name|Good|Democratic People's Republic of Korea|30/10/2025|30/10/2025|25/05/2026|DPR4058
+14058|CHUN|P.|||||||27/04/1956||North Korea|North Korea|||Businessman||||Individual|AKA|Low|Democratic People's Republic of Korea|30/10/2025|30/10/2025|25/05/2026|DPR4058
+14058|CHUNA|Pak Myong|||||||27/04/1956||North Korea|North Korea|||Businessman||||Individual|Primary name variation|Good|Democratic People's Republic of Korea|30/10/2025|30/10/2025|25/05/2026|DPR4058
+14059|HYOK|Ri Chol|||||||08/12/1958||North Korea|North Korea|||||||Individual|Primary name|Good|Democratic People's Republic of Korea|22/04/2024|22/04/2024|24/08/2024|DPR4059
+14059|HYOKI|Ri Chol|||||||08/12/1958||North Korea|North Korea|||||||Individual|Primary name variation|Good|Democratic People's Republic of Korea|22/04/2024|22/04/2024|24/08/2024|DPR4059
+14060|GHASEMIPOUR|Mahmoud Reza|||||||21/02/1980||Iran|Iran|||||||Individual|Primary name|Good|Iran|16/04/2023|16/04/2023|02/08/2023|IRN4060
+14061|ZVONAREV|Stanislav|Yefimovich|||||Станислав Йефимович Звонарев|15/07/1970||Belarus|Belarus|||Former official||||Individual|Primary name|Good|Belarus|16/03/2025|16/03/2025|24/05/2025|BLR4061
+14062|MEZHAKOV|Svyatoslav|Arkadyevich|||||Святослав Аркадйевич Межаков|24/07/1972||Russia|Russia|||Military officer||||Individual|Primary name|Good|Russia|16/01/2024|16/01/2024|06/06/2024|RUS4062
+14062|MEZHAKOVA|Svyatoslav|||||||24/07/1972||Russia|Russia|||Military officer||||Individual|Primary name variation|Good|Russia|16/01/2024|16/01/2024|06/06/2024|RUS4062
+14063|NAJAFABADI|Shahram|||||||18/04/1988||Iran|Iran|||Former official||||Individual|Primary name|Good|Iran|18/12/2023|18/12/2023|19/10/2024|IRN4063
+14063|NAJAFABADI|S.|||||||18/04/1988||Iran|Iran|||Former official||||Individual|AKA|Low|Iran|18/12/2023|18/12/2023|19/10/2024|IRN4063
+14063|NAJAFABADII|Shahram|||||||18/04/1988||Iran|Iran|||Former official||||Individual|Primary name variation|Good|Iran|18/12/2023|18/12/2023|19/10/2024|IRN4063
+14064|QASSAB|Wael|||||||03/11/1989||Syria|Syria|||||||Individual|Primary name|Good|Syria|29/01/2024|29/01/2024|12/09/2024|SYR4064
+14065|ZVONAREV|Feliks|Rostislavovich|||||Феликс Ростиславович Звонарев|09/07/1984||Belarus|Belarus|||Former official||||Individual|Primary name|Good|Belarus|19/07/2023|19/07/2023|29/05/2024|BLR4065
+14066|HYOK|Kim Song|||||||10/11/1954||North Korea|North Korea|||Former official||||Individual|Primary name|Good|Democratic People's Republic of Korea|16/04/2023|16/04/2023|05/09/2023|DPR4066
+14067|OSTAPCHUK|Rostislav|Glebovich|||||Ростислав Глебович Остапчук|00/00/1969||Russia|Russia|||Military officer||||Individual|Primary name|Good|Russia|08/06/2023|08/06/2023|23/12/2023|RUS4067
+14068|MARDINI|Wael|||||||00/00/1952||Syria|Syria|||||||Individual|Primary name|Good|Syria|19/09/2025|19/09/2025|29/11/2025|SYR4068
+14069|MEZHAKOV|Rostislav|Borisovich|||||Ростислав Борисович Межаков|02/04/1974||Belarus|Belarus|||Former official||||Individual|Primary name|Good|Belarus|12/06/2025|12/06/2025|15/02/2026|BLR4069
+14069|MEZHAKOV|R.|||||||02/04/1974||Belarus|Belarus|||Former official||||Individual|AKA|Low|Belarus|12/06/2025|12/06/2025|15/02/2026|BLR4069
+14070|VORBANOV|Matvei|Rostislavovich|||||Матвеи Ростиславович Ворбанов|16/05/1990||Belarus|Belarus|||||||Individual|Primary name|Good|Belarus|26/11/2024|26/11/2024|06/08/2025|BLR4070
+14070|VORBANOVA|Matvei|||||||16/05/1990||Belarus|Belarus|||||||Individual|Primary name variation|Good|Belarus|26/11/2024|26/11/2024|06/08/2025|BLR4070
+14071|VORBANOV|Lev|Arkadyevich|||||Лев Аркадйевич Ворбанов|26/06/1988||Belarus|Belarus|||Member of parliament||||Individual|Primary name|Good|Belarus|09/01/2023|09/01/2023|01/08/2023|BLR4071
+14072|CHUN|Jon Il|||||||12/06/1949||North Korea|North Korea|||Former official||||Individual|Primary name|Good|Democratic People's Republic of Korea|08/07/2024|08/07/2024|30/05/2025|DPR4072
+14072|CHUN|J.|||||||12/06/1949||North Korea|North Korea|||Former official||||Individual|AKA|Low|Democratic People's Republic of Korea|08/07/2024|08/07/2024|30/05/2025|DPR4072
+14073|SU|Choe Sok|||||||00/00/1959||North Korea|North Korea|||Former official||||Individual|Primary name|Good|Democratic People's Republic of Korea|13/02/2024|13/02/2024|02/03/2024|DPR4073
+14073|SUI|Choe Sok|||||||00/00/1959||North Korea|North Korea|||Former official||||Individual|Primary name variation|Good|Democratic People's Republic of Korea|13/02/2024|13/02/2024|02/03/2024|DPR4073
+14074|HYOK|Jon Il|||||||09/05/1956||North Korea|North Korea|||Businessman||||Individual|Primary name|Good|Democratic People's Republic of Korea|24/05/2026|24/05/2026|20/10/2026|DPR4074
+14074|HYOK|J.|||||||09/05/1956||North Korea|North Korea|||Businessman||||Individual|AKA|Low|Democratic People's Republic of Korea|24/05/2026|24/05/2026|20/10/2026|DPR4074
+14075|MIRHASHEMI|Hossein Ali|||||||12/03/1948||Iran|Iran|||Former official||||Individual|Primary name|Good|Iran|28/11/2024|28/11/2024|09/01/2025|IRN4075
+14076|TALYZIN|Vsevolod|Matveyevich|||||Всеволод Матвейевич Талйзин|11/07/1968||Belarus|Belarus|||Businessman||||Individual|Primary name|Good|Belarus|01/06/2025|01/06/2025|23/09/2025|BLR4076
+14076|TALYZIN|V.|||||||11/07/1968||Belarus|Belarus|||Businessman||||Individual|AKA|Low|Belarus|01/06/2025|01/06/2025|23/09/2025|BLR4076
+14077|SU|Han Yong|||||||07/03/1956||North Korea|North Korea|||||||Individual|Primary name|Good|Democratic People's Republic of Korea|06/12/2023|06/12/2023|05/08/2024|DPR4077
+14077|SU|H.|||||||07/03/1956||North Korea|North Korea|||||||Individual|AKA|Low|Democratic People's Republic of Korea|06/12/2023|06/12/2023|05/08/2024|DPR4077
+14077|SUI|Han Yong|||||||07/03/1956||North Korea|North Korea|||||||Individual|Primary name variation|Good|Democratic People's Republic of Korea|06/12/2023|06/12/2023|05/08/2024|DPR4077
+14078|BAGHERZADEH|Kamran|||||||09/03/1958||Iran|Iran|||Former official||||Individual|Primary name|Good|Iran|31/08/2023|31/08/2023|19/10/2023|IRN4078
+14079|VORBANOV|Zakhar|Matveyevich|||||Захар Матвейевич Ворбанов|00/00/1947||Russia|Russia|||Businessman||||Individual|Primary name|Good|Russia|12/09/2024|12/09/2024|28/11/2024|RUS4079
+14079|VORBANOVA|Zakhar|||||||00/00/1947||Russia|Russia|||Businessman||||Individual|Primary name variation|Good|Russia|12/09/2024|12/09/2024|28/11/2024|RUS4079
+14080|DRAVINSK LOGISTICS CO||||||||||||||||North Korea||Entity|Primary name|Good|Democratic People's Republic of Korea|29/01/2025|29/01/2025|22/11/2025|DPR4080
+14081|DRAVINSK DEFENCE SYSTEMS LTD||||||||||||||||Syria||Entity|Primary name|Good|Syria|29/12/2025|29/12/2025|28/08/2026|SYR4081
+14081|DRAVINSK DEFENCE SYSTEMS||||||||||||||||Syria||Entity|AKA|Good|Syria|29/12/2025|29/12/2025|28/08/2026|SYR4081
+14082|SOLVANTA INDUSTRIAL GROUP LTD||||||||||||||||Russia||Entity|Primary name|Good|Russia|15/03/2026|15/03/2026|11/05/2026|RUS4082
+14083|PRIBREZH INDUSTRIAL GROUP LTD||||||||||||||||North Korea||Entity|Primary name|Good|Democratic People's Republic of Korea|27/06/2026|27/06/2026|22/11/2026|DPR4083
+14084|CHILBO SEA LOGISTICS PJSC||||||||||||||||Russia||Entity|Primary name|Good|Russia|06/09/2024|06/09/2024|08/11/2024|RUS4084
+14085|MORSKOY KLYUCH INVESTMENT COMPANY LTD||||||||||||||||Russia||Entity|Primary name|Good|Russia|01/11/2024|01/11/2024|11/02/2025|RUS4085
+14086|VELMORA METALLURG PJSC||||||||||||||||Syria||Entity|Primary name|Good|Syria|13/11/2025|13/11/2025|05/12/2025|SYR4086
+14086|VELMORA METALLURG||||||||||||||||Syria||Entity|AKA|Good|Syria|13/11/2025|13/11/2025|05/12/2025|SYR4086
+14087|KAMTREL COMMERCE BANK LTD||||||||||||||||North Korea|SWIFT/BIC: GSMKRUMM|Entity|Primary name|Good|Democratic People's Republic of Korea|09/05/2024|09/05/2024|05/12/2024|DPR4087
+14087|KAMTREL COMMERCE BANK||||||||||||||||North Korea|SWIFT/BIC: GSMKRUMM|Entity|AKA|Good|Democratic People's Republic of Korea|09/05/2024|09/05/2024|05/12/2024|DPR4087
+14088|MORSKOY KLYUCH MARITIME HOLDINGS JSC||||||||||||||||North Korea||Entity|Primary name|Good|Democratic People's Republic of Korea|26/06/2024|26/06/2024|09/08/2024|DPR4088
+14088|MORSKOY KLYUCH MARITIME HOLDINGS||||||||||||||||North Korea||Entity|AKA|Good|Democratic People's Republic of Korea|26/06/2024|26/06/2024|09/08/2024|DPR4088
+14089|DRAVINSK INDUSTRIAL GROUP LTD||||||||||||||||Syria||Entity|Primary name|Good|Syria|02/12/2025|02/12/2025|09/04/2026|SYR4089
+14089|DRAVINSK INDUSTRIAL GROUP||||||||||||||||Syria||Entity|AKA|Good|Syria|02/12/2025|02/12/2025|09/04/2026|SYR4089
+14090|BELOVAR INDUSTRIAL GROUP OOO||||||||||||||||Syria||Entity|Primary name|Good|Syria|05/03/2024|05/03/2024|15/05/2024|SYR4090
+14090|BELOVAR INDUSTRIAL GROUP||||||||||||||||Syria||Entity|AKA|Good|Syria|05/03/2024|05/03/2024|15/05/2024|SYR4090
+14091|HALABI BROS SHIPPING PJSC||||||||||||||||Russia||Entity|Primary name|Good|Russia|01/02/2024|01/02/2024|17/02/2025|RUS4091
+14092|ARKTIVO LOGISTICS FZE||||||||||||||||Russia||Entity|Primary name|Good|Russia|11/09/2026|11/09/2026|14/09/2026|RUS4092
+14093|HALABI BROS PETROCHEMICAL LTD||||||||||||||||North Korea||Entity|Primary name|Good|Democratic People's Republic of Korea|07/05/2024|07/05/2024|27/02/2025|DPR4093
+14094|BELOVAR LOGISTICS LLC||||||||||||||||Russia||Entity|Primary name|Good|Russia|27/09/2025|27/09/2025|08/11/2025|RUS4094
+14095|ZARYANT PETROCHEMICAL PJSC||||||||||||||||Belarus||Entity|Primary name|Good|Belarus|19/05/2023|19/05/2023|30/08/2023|BLR4095
+14096|KAMTREL INDUSTRIAL GROUP CO||||||||||||||||Iran||Entity|Primary name|Good|Iran|08/07/2023|08/07/2023|02/11/2023|IRN4096
+14097|OSTRAVA NORD INVESTMENT COMPANY OOO||||||||||||||||North Korea||Entity|Primary name|Good|Democratic People's Republic of Korea|22/10/2022|22/10/2022|03/04/2023|DPR4097
+14098|SEVERNYI PUT INDUSTRIAL GROUP PJSC||||||||||||||||Russia||Entity|Primary name|Good|Russia|04/04/2024|04/04/2024|26/01/2025|RUS4098
+14099|PRIBREZH ENERGY TRADING CO||||||||||||||||North Korea||Entity|Primary name|Good|Democratic People's Republic of Korea|11/10/2023|11/10/2023|04/02/2024|DPR4099
+14099|PRIBREZH ENERGY TRADING||||||||||||||||North Korea||Entity|AKA|Good|Democratic People's Republic of Korea|11/10/2023|11/10/2023|04/02/2024|DPR4099
+14100|ARKTIVO METALLURG JSC||||||||||||||||Russia||Entity|Primary name|Good|Russia|02/04/2025|02/04/2025|30/10/2025|RUS4100
+14101|BELOVAR PRECIOUS METALS FZE||||||||||||||||Belarus||Entity|Primary name|Good|Belarus|12/02/2026|12/02/2026|22/11/2026|BLR4101
+14102|ARKTIVO MARITIME HOLDINGS OOO||||||||||||||||Russia||Entity|Primary name|Good|Russia|29/01/2023|29/01/2023|03/03/2023|RUS4102
+14102|ARKTIVO MARITIME HOLDINGS||||||||||||||||Russia||Entity|AKA|Good|Russia|29/01/2023|29/01/2023|03/03/2023|RUS4102
+14103|YUZHTEK INVESTMENT COMPANY LTD||||||||||||||||North Korea||Entity|Primary name|Good|Democratic People's Republic of Korea|18/12/2024|18/12/2024|06/02/2025|DPR4103
+14103|YUZHTEK INVESTMENT COMPANY||||||||||||||||North Korea||Entity|AKA|Good|Democratic People's Republic of Korea|18/12/2024|18/12/2024|06/02/2025|DPR4103
+14104|MORSKOY KLYUCH INDUSTRIAL GROUP FZE||||||||||||||||North Korea||Entity|Primary name|Good|Democratic People's Republic of Korea|26/05/2024|26/05/2024|06/09/2024|DPR4104
+14104|MORSKOY KLYUCH INDUSTRIAL GROUP||||||||||||||||North Korea||Entity|AKA|Good|Democratic People's Republic of Korea|26/05/2024|26/05/2024|06/09/2024|DPR4104
+14105|YUZHTEK SHIPPING PJSC||||||||||||||||North Korea||Entity|Primary name|Good|Democratic People's Republic of Korea|10/06/2026|10/06/2026|11/06/2026|DPR4105
+14106|DARYA NOOR METALLURG LLC||||||||||||||||Belarus||Entity|Primary name|Good|Belarus|05/04/2025|05/04/2025|02/08/2025|BLR4106
+14107|ZOLOTAR MARITIME HOLDINGS FZE||||||||||||||||Syria||Entity|Primary name|Good|Syria|14/03/2026|14/03/2026|05/11/2026|SYR4107
+14108|OSTRAVA NORD LOGISTICS LLC||||||||||||||||Russia||Entity|Primary name|Good|Russia|15/09/2025|15/09/2025|08/03/2026|RUS4108
+14108|OSTRAVA NORD LOGISTICS||||||||||||||||Russia||Entity|AKA|Good|Russia|15/09/2025|15/09/2025|08/03/2026|RUS4108
+14109|SOLVANTA INVESTMENT COMPANY FZE||||||||||||||||Belarus||Entity|Primary name|Good|Belarus|25/06/2025|25/06/2025|11/10/2025|BLR4109
+14110|PERSIRAN COMMERCE BANK PJSC||||||||||||||||Belarus|SWIFT/BIC: WPQVBYMM|Entity|Primary name|Good|Belarus|06/05/2023|06/05/2023|19/12/2023|BLR4110
+14111|PERSIRAN SHIPPING FZE||||||||||||||||Russia||Entity|Primary name|Good|Russia|25/05/2025|25/05/2025|09/06/2025|RUS4111
+14112|TAYBEH STAR COMMERCE BANK CO||||||||||||||||North Korea|SWIFT/BIC: QZWJRUMM|Entity|Primary name|Good|Democratic People's Republic of Korea|29/04/2026|29/04/2026|22/11/2026|DPR4112
+14113|PRIBREZH PETROCHEMICAL OOO||||||||||||||||Belarus||Entity|Primary name|Good|Belarus|31/07/2026|31/07/2026|22/11/2026|BLR4113
+14114|OSTRAVA NORD METALLURG LLC||||||||||||||||Belarus||Entity|Primary name|Good|Belarus|17/03/2023|17/03/2023|15/08/2023|BLR4114
+14115|ARKTIVO INDUSTRIAL GROUP LTD||||||||||||||||North Korea||Entity|Primary name|Good|Democratic People's Republic of Korea|02/09/2024|02/09/2024|29/04/2025|DPR4115
+14115|ARKTIVO INDUSTRIAL GROUP||||||||||||||||North Korea||Entity|AKA|Good|Democratic People's Republic of Korea|02/09/2024|02/09/2024|29/04/2025|DPR4115
+14116|HALABI BROS LOGISTICS CO||||||||||||||||Russia||Entity|Primary name|Good|Russia|05/08/2024|05/08/2024|09/02/2025|RUS4116
+14117|MV PEARL WIND|||||||||||||||||IMO number 9188666|Ship|Primary name|Good|Iran|01/09/2026|01/09/2026|22/11/2026|IRN4117
+14118|MT GOLDEN DAWN|||||||||||||||||IMO number 9987540|Ship|Primary name|Good|Democratic People's Republic of Korea|18/09/2025|18/09/2025|06/05/2026|DPR4118
+14119|MV PEARL DAWN|||||||||||||||||IMO number 9027335|Ship|Primary name|Good|Iran|06/01/2026|06/01/2026|22/11/2026|IRN4119
+14120|MT SEA FALCON|||||||||||||||||IMO number 9457294|Ship|Primary name|Good|Democratic People's Republic of Korea|12/11/2023|12/11/2023|22/11/2023|DPR4120
+14121|MV SEA TIDE|||||||||||||||||IMO number 9457184|Ship|Primary name|Good|Russia|20/09/2026|20/09/2026|22/11/2026|RUS4121
