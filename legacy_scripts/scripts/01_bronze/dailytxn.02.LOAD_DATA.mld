@@ -1,0 +1,353 @@
+.LOGTABLE <DB_ENV>DB_TRANS_IMPORTS.MLD_DLYTXN_DATA_RAW_LOG;
+
+/**************************************************************************\
+* PRE-PROCESSING ACTIONS                                                   *
+\**************************************************************************/
+
+DROP TABLE <DB_ENV>DB_TRANS_IMPORTS.MLD_DLYTXN_DATA_RAW_WKT;
+DROP TABLE <DB_ENV>DB_TRANS_IMPORTS.MLD_DLYTXN_DATA_RAW_ERR;
+DROP TABLE <DB_ENV>DB_TRANS_IMPORTS.MLD_DLYTXN_DATA_RAW_UNQ;
+DROP TABLE <DB_ENV>DB_TRANS_IMPORTS.MLD_DLYTXN_CTRL_RAW_WKT;
+DROP TABLE <DB_ENV>DB_TRANS_IMPORTS.MLD_DLYTXN_CTRL_RAW_ERR;
+DROP TABLE <DB_ENV>DB_TRANS_IMPORTS.MLD_DLYTXN_CTRL_RAW_UNQ;
+
+RELEASE MLOAD <DB_ENV>DB_TRANS_IMPORTS.DLYTXN_DATA_RAW;
+RELEASE MLOAD <DB_ENV>DB_TRANS_IMPORTS.DLYTXN_DATA_RAW IN APPLY;
+RELEASE MLOAD <DB_ENV>DB_TRANS_IMPORTS.DLYTXN_CTRL_RAW;
+RELEASE MLOAD <DB_ENV>DB_TRANS_IMPORTS.DLYTXN_CTRL_RAW IN APPLY;
+
+
+/**************************************************************************\
+* CLEAR THE PRIMARY WORKTABLES PRIOR TO LOADING                            *
+\**************************************************************************/
+
+DELETE FROM <DB_ENV>DB_TRANS_IMPORTS.DLYTXN_DATA_RAW
+;
+DELETE FROM <DB_ENV>DB_TRANS_IMPORTS.DLYTXN_CTRL_RAW
+;
+
+
+/**************************************************************************\
+* BEGIN MULTILOAD PROCESSING                                               *
+* ------------------------------------------------------------------------ *
+* One MultiLoad task loads both targets. The daily transaction extract     *
+* holds one header (H), n detail (D) and one trailer (T) record. Header    *
+* and trailer records are space-padded to the detail record length.        *
+* Up to 500 rejected records are tolerated before the job aborts; the      *
+* reconciliation in dailytxn.03 decides if the file is usable.             *
+\**************************************************************************/
+
+.BEGIN IMPORT MLOAD
+       TABLES      <DB_ENV>DB_TRANS_IMPORTS.DLYTXN_DATA_RAW,
+                   <DB_ENV>DB_TRANS_IMPORTS.DLYTXN_CTRL_RAW
+       WORKTABLES  <DB_ENV>DB_TRANS_IMPORTS.MLD_DLYTXN_DATA_RAW_WKT,
+                   <DB_ENV>DB_TRANS_IMPORTS.MLD_DLYTXN_CTRL_RAW_WKT
+       ERRORTABLES <DB_ENV>DB_TRANS_IMPORTS.MLD_DLYTXN_DATA_RAW_ERR
+                   <DB_ENV>DB_TRANS_IMPORTS.MLD_DLYTXN_DATA_RAW_UNQ,
+                   <DB_ENV>DB_TRANS_IMPORTS.MLD_DLYTXN_CTRL_RAW_ERR
+                   <DB_ENV>DB_TRANS_IMPORTS.MLD_DLYTXN_CTRL_RAW_UNQ
+       ERRLIMIT    500
+       CHECKPOINT  250000
+       SESSIONS    4
+       TENACITY    4
+       SLEEP       6
+       AMPCHECK    ALL;
+
+
+/**************************************************************************\
+* CONFIGURE THE DETAIL RECORD LAYOUT (RECTYPE = 'D')                       *
+\**************************************************************************/
+
+.LAYOUT ddl_DLYTXN_DATA_RAW;
+
+.FIELD txt_RECTYPE                         1  CHAR (1);
+.FIELD txt_SUPPLIER_CD                     *  CHAR (4);
+.FIELD txt_FILE_SEQ_NR                     *  CHAR (9);
+.FIELD txt_TXN_REF                         *  CHAR (35);
+.FIELD txt_TXN_SEQ_NR                      *  CHAR (4);
+.FIELD txt_SORT_CD                         *  CHAR (6);
+.FIELD txt_ACCT_NR                         *  CHAR (8);
+.FIELD txt_TXN_TYP_CD                      *  CHAR (4);
+.FIELD txt_CHNL_CD                         *  CHAR (3);
+.FIELD txt_DR_CR_IND                       *  CHAR (1);
+.FIELD txt_TXN_AMT                         *  CHAR (16);
+.FIELD txt_TXN_CCY                         *  CHAR (3);
+.FIELD txt_ORIG_AMT                        *  CHAR (16);
+.FIELD txt_ORIG_CCY                        *  CHAR (3);
+.FIELD txt_BOOKING_DT                      *  CHAR (8);
+.FIELD txt_VALUE_DT                        *  CHAR (8);
+.FIELD txt_TXN_TMS                         *  CHAR (14);
+.FIELD txt_NARRATIVE                       *  CHAR (140);
+.FIELD txt_CPTY_NM                         *  CHAR (140);
+.FIELD txt_CPTY_SORT_CD                    *  CHAR (6);
+.FIELD txt_CPTY_ACCT_NR                    *  CHAR (8);
+.FIELD txt_CPTY_IBAN                       *  CHAR (34);
+.FIELD txt_CPTY_BIC                        *  CHAR (11);
+.FIELD txt_CPTY_BANK_CTRY                  *  CHAR (2);
+.FIELD txt_CPTY_CTRY                       *  CHAR (2);
+.FIELD txt_ORDERING_CUST_NM                *  CHAR (140);
+.FIELD txt_BENEF_CUST_NM                   *  CHAR (140);
+.FIELD txt_PAYMENT_REF                     *  CHAR (35);
+.FIELD txt_E2E_ID                          *  CHAR (35);
+.FIELD txt_UETR                            *  CHAR (36);
+.FIELD txt_SWIFT_MSG_TYP                   *  CHAR (3);
+.FIELD txt_CHARGE_BEARER                   *  CHAR (3);
+.FIELD txt_INTERMED_BIC                    *  CHAR (11);
+.FIELD txt_MCC                             *  CHAR (4);
+.FIELD txt_MERCHANT_NM                     *  CHAR (40);
+.FIELD txt_MERCHANT_CTRY                   *  CHAR (2);
+.FIELD txt_MERCHANT_ID                     *  CHAR (15);
+.FIELD txt_TERMINAL_ID                     *  CHAR (8);
+.FIELD txt_ATM_ID                          *  CHAR (8);
+.FIELD txt_CARD_TOKEN                      *  CHAR (19);
+.FIELD txt_POS_ENTRY_MODE                  *  CHAR (2);
+.FIELD txt_CARD_PRESENT_IND                *  CHAR (1);
+.FIELD txt_BRANCH_SORT_CD                  *  CHAR (6);
+.FIELD txt_TELLER_ID                       *  CHAR (8);
+.FIELD txt_CASH_IND                        *  CHAR (1);
+.FIELD txt_CHEQUE_NR                       *  CHAR (6);
+.FIELD txt_DEVICE_ID                       *  CHAR (40);
+.FIELD txt_IP_ADDR                         *  CHAR (45);
+.FIELD txt_IP_CTRY                         *  CHAR (2);
+.FIELD txt_SESSION_ID                      *  CHAR (36);
+.FIELD txt_AUTH_METHOD                     *  CHAR (2);
+.FIELD txt_COP_RESULT                      *  CHAR (2);
+.FIELD txt_APP_FRAUD_IND                   *  CHAR (1);
+.FIELD txt_RETURN_REASON_CD                *  CHAR (4);
+.FIELD txt_REVERSAL_IND                    *  CHAR (1);
+.FIELD txt_ORIG_TXN_REF                    *  CHAR (35);
+.FIELD txt_BAL_AFTER                       *  CHAR (16);
+.FIELD txt_TXN_STATUS                      *  CHAR (2);
+.FIELD txt_FEE_AMT                         *  CHAR (16);
+.FIELD txt_PURPOSE_CD                      *  CHAR (4);
+.FIELD txt_BATCH_ID                        *  CHAR (20);
+.FIELD txt_EXTRACT_DT                      *  CHAR (8);
+
+
+/**************************************************************************\
+* CONFIGURE THE HEADER / TRAILER RECORD LAYOUT (RECTYPE = 'H' / 'T')       *
+\**************************************************************************/
+
+.LAYOUT ddl_DLYTXN_CTRL_RAW;
+
+.FIELD ctl_RECTYPE                       1  CHAR (1);
+.FIELD ctl_SUPPLIER_CD                   *  CHAR (4);
+.FIELD ctl_FILE_ID                       *  CHAR (20);
+.FIELD ctl_EXTRACT_DT                    *  CHAR (8);
+.FIELD ctl_REC_CNT                       *  CHAR (10);
+.FIELD ctl_DR_TOTAL                      *  CHAR (18);
+.FIELD ctl_CR_TOTAL                      *  CHAR (18);
+.FIELD ctl_CREATED_TMS                   *  CHAR (14);
+.FILLER ctl_PADDING                      *  CHAR (1150);
+
+
+/**************************************************************************\
+* CONFIGURE THE INSERT DML FOR DETAIL RECORDS                              *
+* ------------------------------------------------------------------------ *
+* Duplicate rows are kept in the UNQ table (MARK) so that dailytxn.03 can  *
+* report on them; missing rows on re-run are ignored.                      *
+\**************************************************************************/
+
+.DML LABEL dml_DLYTXN_DATA_RAW
+     MARK   DUPLICATE INSERT ROWS
+     IGNORE MISSING UPDATE ROWS;
+
+INSERT INTO <DB_ENV>DB_TRANS_IMPORTS.DLYTXN_DATA_RAW
+(
+       RECTYPE,
+       SUPPLIER_CD,
+       FILE_SEQ_NR,
+       TXN_REF,
+       TXN_SEQ_NR,
+       SORT_CD,
+       ACCT_NR,
+       TXN_TYP_CD,
+       CHNL_CD,
+       DR_CR_IND,
+       TXN_AMT,
+       TXN_CCY,
+       ORIG_AMT,
+       ORIG_CCY,
+       BOOKING_DT,
+       VALUE_DT,
+       TXN_TMS,
+       NARRATIVE,
+       CPTY_NM,
+       CPTY_SORT_CD,
+       CPTY_ACCT_NR,
+       CPTY_IBAN,
+       CPTY_BIC,
+       CPTY_BANK_CTRY,
+       CPTY_CTRY,
+       ORDERING_CUST_NM,
+       BENEF_CUST_NM,
+       PAYMENT_REF,
+       E2E_ID,
+       UETR,
+       SWIFT_MSG_TYP,
+       CHARGE_BEARER,
+       INTERMED_BIC,
+       MCC,
+       MERCHANT_NM,
+       MERCHANT_CTRY,
+       MERCHANT_ID,
+       TERMINAL_ID,
+       ATM_ID,
+       CARD_TOKEN,
+       POS_ENTRY_MODE,
+       CARD_PRESENT_IND,
+       BRANCH_SORT_CD,
+       TELLER_ID,
+       CASH_IND,
+       CHEQUE_NR,
+       DEVICE_ID,
+       IP_ADDR,
+       IP_CTRY,
+       SESSION_ID,
+       AUTH_METHOD,
+       COP_RESULT,
+       APP_FRAUD_IND,
+       RETURN_REASON_CD,
+       REVERSAL_IND,
+       ORIG_TXN_REF,
+       BAL_AFTER,
+       TXN_STATUS,
+       FEE_AMT,
+       PURPOSE_CD,
+       BATCH_ID,
+       EXTRACT_DT
+)
+VALUES
+(
+       :txt_RECTYPE,
+       :txt_SUPPLIER_CD,
+       :txt_FILE_SEQ_NR,
+       :txt_TXN_REF,
+       :txt_TXN_SEQ_NR,
+       :txt_SORT_CD,
+       :txt_ACCT_NR,
+       :txt_TXN_TYP_CD,
+       :txt_CHNL_CD,
+       :txt_DR_CR_IND,
+       :txt_TXN_AMT,
+       :txt_TXN_CCY,
+       :txt_ORIG_AMT,
+       :txt_ORIG_CCY,
+       :txt_BOOKING_DT,
+       :txt_VALUE_DT,
+       :txt_TXN_TMS,
+       :txt_NARRATIVE,
+       :txt_CPTY_NM,
+       :txt_CPTY_SORT_CD,
+       :txt_CPTY_ACCT_NR,
+       :txt_CPTY_IBAN,
+       :txt_CPTY_BIC,
+       :txt_CPTY_BANK_CTRY,
+       :txt_CPTY_CTRY,
+       :txt_ORDERING_CUST_NM,
+       :txt_BENEF_CUST_NM,
+       :txt_PAYMENT_REF,
+       :txt_E2E_ID,
+       :txt_UETR,
+       :txt_SWIFT_MSG_TYP,
+       :txt_CHARGE_BEARER,
+       :txt_INTERMED_BIC,
+       :txt_MCC,
+       :txt_MERCHANT_NM,
+       :txt_MERCHANT_CTRY,
+       :txt_MERCHANT_ID,
+       :txt_TERMINAL_ID,
+       :txt_ATM_ID,
+       :txt_CARD_TOKEN,
+       :txt_POS_ENTRY_MODE,
+       :txt_CARD_PRESENT_IND,
+       :txt_BRANCH_SORT_CD,
+       :txt_TELLER_ID,
+       :txt_CASH_IND,
+       :txt_CHEQUE_NR,
+       :txt_DEVICE_ID,
+       :txt_IP_ADDR,
+       :txt_IP_CTRY,
+       :txt_SESSION_ID,
+       :txt_AUTH_METHOD,
+       :txt_COP_RESULT,
+       :txt_APP_FRAUD_IND,
+       :txt_RETURN_REASON_CD,
+       :txt_REVERSAL_IND,
+       :txt_ORIG_TXN_REF,
+       :txt_BAL_AFTER,
+       :txt_TXN_STATUS,
+       :txt_FEE_AMT,
+       :txt_PURPOSE_CD,
+       :txt_BATCH_ID,
+       :txt_EXTRACT_DT
+)
+;
+
+
+/**************************************************************************\
+* CONFIGURE THE INSERT DML FOR HEADER / TRAILER RECORDS                    *
+\**************************************************************************/
+
+.DML LABEL dml_DLYTXN_CTRL_RAW
+     IGNORE DUPLICATE INSERT ROWS;
+
+INSERT INTO <DB_ENV>DB_TRANS_IMPORTS.DLYTXN_CTRL_RAW
+(
+       RECTYPE,
+       SUPPLIER_CD,
+       FILE_ID,
+       EXTRACT_DT,
+       REC_CNT,
+       DR_TOTAL,
+       CR_TOTAL,
+       CREATED_TMS
+)
+VALUES
+(
+       :ctl_RECTYPE,
+       :ctl_SUPPLIER_CD,
+       :ctl_FILE_ID,
+       :ctl_EXTRACT_DT,
+       :ctl_REC_CNT,
+       :ctl_DR_TOTAL,
+       :ctl_CR_TOTAL,
+       :ctl_CREATED_TMS
+)
+;
+
+
+/**************************************************************************\
+* INITIATE DATA LOAD - DETAIL RECORDS                                      *
+\**************************************************************************/
+
+.IMPORT INFILE ../data/dailytxn.dat
+        FORMAT TEXT
+        LAYOUT ddl_DLYTXN_DATA_RAW
+        APPLY  dml_DLYTXN_DATA_RAW  WHERE txt_RECTYPE = 'D'
+;
+
+
+/**************************************************************************\
+* INITIATE DATA LOAD - HEADER AND TRAILER RECORDS                          *
+\**************************************************************************/
+
+.IMPORT INFILE ../data/dailytxn.dat
+        FORMAT TEXT
+        LAYOUT ddl_DLYTXN_CTRL_RAW
+        APPLY  dml_DLYTXN_CTRL_RAW  WHERE ctl_RECTYPE = 'H'
+                                       OR ctl_RECTYPE = 'T'
+;
+
+
+/**************************************************************************\
+* END OF SCRIPT                                                            *
+\**************************************************************************/
+
+.END MLOAD;
+
+.IF &SYSRC > 4 THEN
+.LOGOFF &SYSRC;
+.ENDIF;
+
+.LOGOFF;

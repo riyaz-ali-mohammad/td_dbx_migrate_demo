@@ -1,0 +1,156 @@
+.LOGTABLE <DB_ENV>DB_TRANS_IMPORTS.MLD_AML_SANCSYS_RAW_LOG;
+
+
+/**************************************************************************\
+* CLEAR THE PRIMARY WORKTABLES PRIOR TO LOADING                            *
+* ------------------------------------------------------------------------ *
+* The consolidated sanctions list is delivered as a FULL file every run.   *
+\**************************************************************************/
+
+DELETE FROM <DB_ENV>DB_TRANS_IMPORTS.AML_SANCSYS_RAW;
+
+
+/**************************************************************************\
+* BEGIN MULTILOAD PROCESSING                                               *
+* ------------------------------------------------------------------------ *
+* Pipe-delimited consolidated list (one row per name / alias).             *
+* NOTE: job must be started with  mload -c UTF8  because NAME_NON_LATIN    *
+*       carries Cyrillic / Arabic script names (3 bytes per character).    *
+\**************************************************************************/
+
+.BEGIN IMPORT MLOAD
+       TABLES      <DB_ENV>DB_TRANS_IMPORTS.AML_SANCSYS_RAW
+       WORKTABLES  <DB_ENV>DB_TRANS_IMPORTS.MLD_AML_SANCSYS_RAW_WRK
+       ERRORTABLES <DB_ENV>DB_TRANS_IMPORTS.MLD_AML_SANCSYS_RAW_ERR
+                   <DB_ENV>DB_TRANS_IMPORTS.MLD_AML_SANCSYS_RAW_UNQ
+       ERRLIMIT    100
+       CHECKPOINT  50000
+       SESSIONS    4
+;
+
+
+/**************************************************************************\
+* CONFIGURE THE DATA FILE LAYOUTS                                          *
+* ------------------------------------------------------------------------ *
+* VARTEXT requires every field to be declared as VARCHAR.                  *
+\**************************************************************************/
+
+.LAYOUT SANCSYS_RAW;
+  .FIELD GROUP_ID          1       VARCHAR(010);
+  .FIELD NAME_6            *       VARCHAR(100);
+  .FIELD NAME_1            *       VARCHAR(060);
+  .FIELD NAME_2            *       VARCHAR(060);
+  .FIELD NAME_3            *       VARCHAR(060);
+  .FIELD NAME_4            *       VARCHAR(060);
+  .FIELD NAME_5            *       VARCHAR(060);
+  .FIELD TITLE             *       VARCHAR(030);
+  .FIELD NAME_NON_LATIN    *       VARCHAR(600);
+  .FIELD DOB               *       VARCHAR(010);
+  .FIELD TOWN_OF_BIRTH     *       VARCHAR(060);
+  .FIELD CTRY_OF_BIRTH     *       VARCHAR(060);
+  .FIELD NATIONALITY       *       VARCHAR(060);
+  .FIELD PASSPORT_NR       *       VARCHAR(060);
+  .FIELD NATIONAL_ID_NR    *       VARCHAR(060);
+  .FIELD POSITION          *       VARCHAR(200);
+  .FIELD ADDR_1            *       VARCHAR(100);
+  .FIELD ADDR_CTRY         *       VARCHAR(060);
+  .FIELD OTHER_INFO        *       VARCHAR(500);
+  .FIELD GROUP_TYPE        *       VARCHAR(020);
+  .FIELD ALIAS_TYPE        *       VARCHAR(030);
+  .FIELD ALIAS_QUALITY     *       VARCHAR(010);
+  .FIELD REGIME            *       VARCHAR(100);
+  .FIELD LISTED_ON         *       VARCHAR(010);
+  .FIELD UK_SANC_LIST_DT   *       VARCHAR(010);
+  .FIELD LAST_UPDATED      *       VARCHAR(010);
+  .FIELD UK_SANC_LIST_REF  *       VARCHAR(020);
+
+
+/**************************************************************************\
+* SPECIFY THE INSERT FROM THE FILE SOURCE                                  *
+\**************************************************************************/
+
+.DML LABEL SANCSYS_DML;
+INSERT INTO <DB_ENV>DB_TRANS_IMPORTS.AML_SANCSYS_RAW
+(
+    "GROUP_ID"
+   ,"NAME_6"
+   ,"NAME_1"
+   ,"NAME_2"
+   ,"NAME_3"
+   ,"NAME_4"
+   ,"NAME_5"
+   ,"TITLE"
+   ,"NAME_NON_LATIN"
+   ,"DOB"
+   ,"TOWN_OF_BIRTH"
+   ,"CTRY_OF_BIRTH"
+   ,"NATIONALITY"
+   ,"PASSPORT_NR"
+   ,"NATIONAL_ID_NR"
+   ,"POSITION"
+   ,"ADDR_1"
+   ,"ADDR_CTRY"
+   ,"OTHER_INFO"
+   ,"GROUP_TYPE"
+   ,"ALIAS_TYPE"
+   ,"ALIAS_QUALITY"
+   ,"REGIME"
+   ,"LISTED_ON"
+   ,"UK_SANC_LIST_DT"
+   ,"LAST_UPDATED"
+   ,"UK_SANC_LIST_REF"
+)
+VALUES
+(
+    :GROUP_ID
+   ,:NAME_6
+   ,:NAME_1
+   ,:NAME_2
+   ,:NAME_3
+   ,:NAME_4
+   ,:NAME_5
+   ,:TITLE
+   ,:NAME_NON_LATIN
+   ,:DOB
+   ,:TOWN_OF_BIRTH
+   ,:CTRY_OF_BIRTH
+   ,:NATIONALITY
+   ,:PASSPORT_NR
+   ,:NATIONAL_ID_NR
+   ,:POSITION
+   ,:ADDR_1
+   ,:ADDR_CTRY
+   ,:OTHER_INFO
+   ,:GROUP_TYPE
+   ,:ALIAS_TYPE
+   ,:ALIAS_QUALITY
+   ,:REGIME
+   ,:LISTED_ON
+   ,:UK_SANC_LIST_DT
+   ,:LAST_UPDATED
+   ,:UK_SANC_LIST_REF
+)
+;
+
+
+/**************************************************************************\
+* INITIATE DATA LOAD                                                       *
+* ------------------------------------------------------------------------ *
+* Record 1 of the file is the column heading line and is skipped.          *
+\**************************************************************************/
+
+.IMPORT INFILE ../data/kycref.sancsys.txt
+        FROM   2
+        FORMAT VARTEXT '|'
+        LAYOUT SANCSYS_RAW
+        APPLY  SANCSYS_DML
+;
+
+
+/**************************************************************************\
+* END OF SCRIPT                                                            *
+\**************************************************************************/
+
+.END MLOAD;
+
+.LOGOFF;
