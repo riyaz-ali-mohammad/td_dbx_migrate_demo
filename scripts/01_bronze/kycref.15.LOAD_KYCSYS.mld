@@ -1,0 +1,77 @@
+.LOGTABLE <DB_ENV>DB_TRANS_IMPORTS.MLD_AML_KYCSYS_RAW_LOG;
+
+
+/**************************************************************************\
+* CLEAR THE PRIMARY WORKTABLES PRIOR TO LOADING                            *
+\**************************************************************************/
+
+DELETE FROM <DB_ENV>DB_TRANS_IMPORTS.AML_KYCSYS_RAW;
+
+
+/**************************************************************************\
+* BEGIN MULTILOAD PROCESSING                                               *
+* ------------------------------------------------------------------------ *
+* KYCSYS customer due-diligence delta extract (fixed width, 500 bytes)     *
+* PY = party, AC = account, PA = party/account role, AL = alias            *
+* Header (HD) and trailer (TR) records are filtered by the APPLY           *
+\**************************************************************************/
+
+.BEGIN IMPORT MLOAD
+       TABLES      <DB_ENV>DB_TRANS_IMPORTS.AML_KYCSYS_RAW
+       WORKTABLES  <DB_ENV>DB_TRANS_IMPORTS.MLD_AML_KYCSYS_RAW_WRK
+       ERRORTABLES <DB_ENV>DB_TRANS_IMPORTS.MLD_AML_KYCSYS_RAW_ERR
+                   <DB_ENV>DB_TRANS_IMPORTS.MLD_AML_KYCSYS_RAW_UNQ
+       ERRLIMIT    250
+       CHECKPOINT  250000
+       SESSIONS    8
+;
+
+
+/**************************************************************************\
+* CONFIGURE THE DATA FILE LAYOUTS                                          *
+\**************************************************************************/
+
+.LAYOUT KYCSYS_RAW;
+  .FIELD A        1       CHAR(002);
+  .FIELD B        *       CHAR(026);
+  .FIELD C        *       CHAR(472);
+
+
+/**************************************************************************\
+* SPECIFY THE INSERT FROM THE FILE SOURCE                                  *
+\**************************************************************************/
+
+.DML LABEL KYCSYS_DML;
+INSERT INTO <DB_ENV>DB_TRANS_IMPORTS.AML_KYCSYS_RAW
+(
+    "A"
+   ,"B"
+   ,"C"
+)
+VALUES
+(
+    :A
+   ,:B
+   ,:C
+)
+;
+
+
+/**************************************************************************\
+* INITIATE DATA LOAD                                                       *
+\**************************************************************************/
+
+.IMPORT INFILE ../data/kycref.kycsys.dat
+        FORMAT TEXT
+        LAYOUT KYCSYS_RAW
+        APPLY  KYCSYS_DML WHERE A NOT IN ('HD', 'TR')
+;
+
+
+/**************************************************************************\
+* END OF SCRIPT                                                            *
+\**************************************************************************/
+
+.END MLOAD;
+
+.LOGOFF;

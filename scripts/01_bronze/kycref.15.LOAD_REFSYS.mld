@@ -1,0 +1,77 @@
+.LOGTABLE <DB_ENV>DB_TRANS_IMPORTS.MLD_AML_REFSYS_RAW_LOG;
+
+
+/**************************************************************************\
+* CLEAR THE PRIMARY WORKTABLES PRIOR TO LOADING                            *
+\**************************************************************************/
+
+DELETE FROM <DB_ENV>DB_TRANS_IMPORTS.AML_REFSYS_RAW;
+
+
+/**************************************************************************\
+* BEGIN MULTILOAD PROCESSING                                               *
+* ------------------------------------------------------------------------ *
+* REFSYS daily reference extract (fixed width, 253 bytes)                  *
+* A = record type, B = business key, C = payload                           *
+* Header (HD) and trailer (TR) records are filtered by the APPLY           *
+\**************************************************************************/
+
+.BEGIN IMPORT MLOAD
+       TABLES      <DB_ENV>DB_TRANS_IMPORTS.AML_REFSYS_RAW
+       WORKTABLES  <DB_ENV>DB_TRANS_IMPORTS.MLD_AML_REFSYS_RAW_WRK
+       ERRORTABLES <DB_ENV>DB_TRANS_IMPORTS.MLD_AML_REFSYS_RAW_ERR
+                   <DB_ENV>DB_TRANS_IMPORTS.MLD_AML_REFSYS_RAW_UNQ
+       ERRLIMIT    250
+       CHECKPOINT  250000
+       SESSIONS    8
+;
+
+
+/**************************************************************************\
+* CONFIGURE THE DATA FILE LAYOUTS                                          *
+\**************************************************************************/
+
+.LAYOUT REFSYS_RAW;
+  .FIELD A        1       CHAR(002);
+  .FIELD B        *       CHAR(030);
+  .FIELD C        *       CHAR(221);
+
+
+/**************************************************************************\
+* SPECIFY THE INSERT FROM THE FILE SOURCE                                  *
+\**************************************************************************/
+
+.DML LABEL REFSYS_DML;
+INSERT INTO <DB_ENV>DB_TRANS_IMPORTS.AML_REFSYS_RAW
+(
+    "A"
+   ,"B"
+   ,"C"
+)
+VALUES
+(
+    :A
+   ,:B
+   ,:C
+)
+;
+
+
+/**************************************************************************\
+* INITIATE DATA LOAD                                                       *
+\**************************************************************************/
+
+.IMPORT INFILE ../data/kycref.refsys.dat
+        FORMAT TEXT
+        LAYOUT REFSYS_RAW
+        APPLY  REFSYS_DML WHERE A NOT IN ('HD', 'TR')
+;
+
+
+/**************************************************************************\
+* END OF SCRIPT                                                            *
+\**************************************************************************/
+
+.END MLOAD;
+
+.LOGOFF;
