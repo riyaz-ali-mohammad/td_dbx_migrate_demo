@@ -139,7 +139,7 @@ Thresholds come from `DB_ODS.TM_RULE_PARAM_SNAPSHOT` by segment (`RET/BUS/CIB/WL
 | `KYC` | `OVERDUE, VE, PE, EX, RF` |
 | `ADVMEDIA` | `Y, N` |
 
-Synthetic versions of all seed tables and landing files, plus expected results, are in `../td_banking_data/` (generator in `../td_banking_data/datagen/`).
+Synthetic versions of all seed tables and landing files, plus expected results, are in [`td_banking_data/`](td_banking_data/) (generator in `td_banking_data/datagen/`).
 
 You also need 4 synthetic landing files: REFSYS (fixed width, 10 record types), KYCSYS (fixed width: `PY/AC/PA/AL`), SANCSYS (pipe-delimited) and the daily transaction file (fixed width with H/D/T records). The record layouts are documented in the banner comments of `kycref.35`, `kycref.55`, `kycref.15.LOAD_SANCSYS` and `dailytxn.02`.
 

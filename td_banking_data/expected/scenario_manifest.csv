@@ -1,0 +1,18 @@
+SCENARIO_ID,EXPECTED_RULES,PARTY_ID,PARTY_NM,SEGMENT_CD,ACCT_ID,DESCRIPTION
+S01_STRUCTURING,TM_STR01;TM_CSH01;TM_TOV01,PTY001001001,Marcus Fenwick,RET,99100799492594,"Four branch cash deposits of GBP 9,200-9,800 in 6 days at different branches (just below GBP 10k); also far above declared turnover"
+S02_RAPID_MOVEMENT,TM_RPM01,PTY001001002,Northbridge Trade Links Ltd,BUS,99100785555285,"GBP 70k received from 5 payers over 2 days, ~96% sent straight on (incl. SWIFT to UAE)"
+S03_HIGH_RISK_JURISDICTION,TM_HRC01,PTY001001003,Grace Adebayo-Holt,RET,99101032173081,"Two SWIFT payments to Nigeria (FATF grey list), GBP 6.3k in 30 days"
+S04_ROUND_AMOUNTS,TM_RND01,PTY001001004,Kestrel Property Developments Ltd,BUS,99100218112564,Five exact GBP 5k/10k transfers to the same payee within 30 days
+S05_DORMANT_REACTIVATION,TM_DRM01;TM_RPM01;TM_TOV01,PTY001001005,Harold Pemberton,RET,99100855359403,Savings account dormant for 480 days receives GBP 18k and pays GBP 17.5k out the same day
+S06_VELOCITY_SPIKE,TM_VEL01,PTY001001006,Sophie Ashworth,RET,99101023274657,30-day credits ~8x the average month of the prior 90 days
+S07_PEP_LARGE_TXN,TM_PEP01,PTY001001007,Viktor Alder-Moss,WLT,99100431219607,"Foreign PEP sends GBP 150k CHAPS (also KYC DQ 102: PEP delivered with CDD, forced to EDD)"
+S08_TURNOVER_MISMATCH,TM_TOV01;TM_VEL01,PTY001001008,Fernhill Hair & Beauty Ltd,BUS,99101198674564,"Declared GBP 5k monthly turnover, ~GBP 41k credited in 30 days"
+S09_CASH_NON_INTENSIVE,TM_CSH01,PTY001001009,Dr Aisha Rahman,RET,99100643777572,GP (not cash intensive) pays in GBP 12.3k cash in 30 days
+S10_MONEY_MULE,TM_MUL01,PTY001001010,Tyler Brennan,RET,99101152897398,"Account opened 20 days ago via app receives from 8 different payers in 3 days, then forwards GBP 5.2k (CoP no-match)"
+S11_GAMBLING_CRYPTO,TM_GMB01,PTY001001011,Liam Holloway,RET,99100759873371,"Eight card payments to betting and crypto exchange merchants, ~GBP 4.2k in 30 days"
+S17_ALERT_SUPPRESSION,TM_RND01,PTY001001012,Silverline Car Sales Ltd,BUS,99101154729319,Round-amount pattern again; an open TM_RND01 alert from 12 days ago (seeded) means today's alert is raised as SUPPR / DUPL
+S12_SANCTIONS_EXACT,TM_SAN01,PTY001001013,Atlas Freight Forwarding plc,CIB,99101288448668,"Pending USD 250k SWIFT to a listed entity (exact name), routed via UAE - DAML/SAR candidate"
+S13_SANCTIONS_TOKEN,TM_SAN01,PTY001001014,Oliver Strathmore,WLT,99100864848745,SWIFT to Cyprus; beneficiary is a listed individual with name order changed (token match)
+S14_SANCTIONS_BIC,TM_SAN01,PTY001001015,Castlegate Metals Trading Ltd,BUS,99100938984130,SWIFT via a listed Russian bank (BIC match); payee name itself is not listed
+S15_SANCTIONS_COUNTRY,TM_SAN01,PTY001001016,Redwood Marine Supplies plc,CIB,99101270917200,SWIFT to a bank in North Korea (comprehensive regime)
+S16_SANCTIONS_ORDERING,TM_SAN01,PTY001001017,Kamal Haddad,RET,99100341484420,Inbound SWIFT from UAE where the ordering customer is a listed Iranian individual

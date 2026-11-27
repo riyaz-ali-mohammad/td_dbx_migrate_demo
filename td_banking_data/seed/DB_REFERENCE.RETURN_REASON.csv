@@ -1,0 +1,9 @@
+RETURN_REASON_CD,RETURN_REASON_DESC,AUTO_ADDED_IND,CO_UPD_TMS
+AC01,Incorrect account number,N,2026-11-24 06:00:00
+AC04,Closed account number,N,2026-11-24 06:00:00
+AC06,Blocked account,N,2026-11-24 06:00:00
+AM04,Insufficient funds,N,2026-11-24 06:00:00
+MD07,End customer deceased,N,2026-11-24 06:00:00
+FOCR,Return following cancellation request,N,2026-11-24 06:00:00
+FR01,Fraud,N,2026-11-24 06:00:00
+RR04,Regulatory reason,N,2026-11-24 06:00:00
